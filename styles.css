@@ -1,0 +1,44 @@
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  background-color: white;
+  width: 1600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.photo {
+  margin-top: 60px;
+}
+
+.img-circle {
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me h1 {
+  font-weight: lighter;
+  font-size: 50px;
+}
+
+.about-me h2 {
+  font-weight: lighter;
+  font-size: 30px;
+}
+
