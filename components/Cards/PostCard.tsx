@@ -12,7 +12,7 @@ const PostCard: FC<PostCardProps> = ({ post, isWithCompletedInfo }) => {
   if (isWithCompletedInfo) {
     return (
       <Link href={`/${post.slug}`}>
-        <div className="w-96 flex flex-col justify-between bg-white dark:bg-[#212529] rounded-lg shadow-lg hover:cursor-pointer overflow-hidden ">
+        <div className="w-96 flex flex-col justify-between bg-white dark:bg-dark-mate rounded-lg shadow-lg hover:cursor-pointer overflow-hidden ">
           <div className='h-[200px] w-[400px]'>
             <Image src={post.data.image} alt={post.data.title} width="400px" height="200px" />
           </div>
@@ -28,7 +28,7 @@ const PostCard: FC<PostCardProps> = ({ post, isWithCompletedInfo }) => {
 
   return (
     <Link href={`/${post.slug}`}>
-      <div className="w-80 p-4 gap-4 flex flex-col justify-between bg-white rounded-lg border-0 shadow-lg border-gray-200 hover:cursor-pointer overflow-hidden dark:bg-[#212529]">
+      <div className="w-80 p-4 gap-4 flex flex-col justify-between bg-white rounded-lg border-0 shadow-lg border-gray-200 hover:cursor-pointer overflow-hidden dark:bg-dark-mate">
         {/* <div className='h-[60%]'>
           <img src={post.data.image} alt="" className='rounded-t-lg w-full object-cover h-[100%]'/>
         </div> */}

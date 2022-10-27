@@ -9,7 +9,7 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
     <a href={project.urlGithub} target="_blank" rel="noreferrer">
-      <div className="w-80 flex flex-col justify-between bg-white dark:bg-[#212529] rounded-lg border-0 shadow-lg border-gray-200 hover:cursor-pointer overflow-hidden ">
+      <div className="w-80 flex flex-col justify-between bg-white dark:bg-dark-mate rounded-lg border-0 shadow-lg border-gray-200 hover:cursor-pointer overflow-hidden ">
         <div className='h-[200px] w-[400px]'>
           <Image src={project.image} alt={project.image} width="400px" height="200px" className='rounded-t-lg object-cover' />
         </div>
