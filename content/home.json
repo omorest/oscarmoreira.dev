@@ -1,8 +1,10 @@
 {
   "desc": {
-    "title": "Hey, I'm",
+    "title": "Hey, soy",
+    "titleEn": "Hey, I'm",
     "titleColored": "Oscar Moreira",
-    "description": "Software developer, passionate about learning good practices, architectures and share the new knowledge."
+    "description": "Software developer, especialmente interesado en el desarrollo Frontend aunque me gusta saber un poco de todo. Me encanta aprender sobre buenas prácticas, arquitecturas y compartir todo lo que voy aprendiendo en mi día a día.",
+    "descriptionEn": "Software developer, passionate about learning good practices, architectures and share the new knowledge."
   },
   "socials": [
     {"github": "https://github.com/omorest"}, 
