@@ -9,7 +9,7 @@ const Post = ({ data, content }: any) => {
     <div className = "flex flex-col items-center">
       <h1 className="font-bold text-center text-7xl mt-24 mb-12">{data.title}</h1>
       <time className="text-gray-500 italic">{data.date}</time>
-      <p className="mt-12 prose prose-base max-w-[100%] lg:max-w-[70%] ">
+      <p className="mt-12 prose prose-base max-w-[100%] lg:max-w-[70%] dark:prose-invert">
         <MDXRemote {...content} />
       </p>
     </div>
