@@ -1,0 +1,12 @@
+{
+  "desc": {
+    "title": "Hey, I'm",
+    "titleColored": "Oscar Moreira",
+    "description": "Software developer, passionate about learning good practices, architectures and share the new knowledge."
+  },
+  "socials": [
+    {"github": "https://github.com/omorest"}, 
+    {"twitter": "https://twitter.com/oscarmoreira1"}, 
+    {"linkedin": "https://www.linkedin.com/in/oscarmoreira/"}
+  ]
+}
