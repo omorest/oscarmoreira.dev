@@ -5,6 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light only;
+}
 
 html,
 body {
