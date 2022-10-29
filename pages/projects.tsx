@@ -9,7 +9,7 @@ const Projects = () => {
   const projectCards = latestsProjects.map((project, index) => <ProjectCard project={project} key={index}/>)
   return (
     <div>
-      <Gallery title='Projectos'>
+      <Gallery title='Proyectos'>
         {projectCards}
       </Gallery>
     </div>
