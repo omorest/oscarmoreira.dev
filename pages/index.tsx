@@ -37,7 +37,7 @@ const Home: NextPage = ({ posts }: any) => {
           </Gallery>
         </div>
         <div className=''>
-          <Gallery title="Últimos projectos" pathViewMore='/projects'>
+          <Gallery title="Últimos proyectos" pathViewMore='/projects'>
             {projectCards}
           </Gallery>
         </div>
