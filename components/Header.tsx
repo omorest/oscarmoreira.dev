@@ -9,7 +9,7 @@ const Header = () => {
       <ul className="flex gap-6 text-gray text-lg font-normal list-none">
         <li className="hover:text-black dark:hover:text-white"><Link href="/about">Sobre mí</Link></li>
         <li className="hover:text-black dark:hover:text-white"><Link href="/blog"> Blog</Link></li>
-        <li className="hover:text-black dark:hover:text-white"><Link href="/projects"> Projectos</Link></li>
+        <li className="hover:text-black dark:hover:text-white"><Link href="/projects"> Proyectos</Link></li>
         {/* <li className="hover:text-black"><Link href="/resume">Resume</Link></li> */}
       </ul>
     </div>
