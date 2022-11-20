@@ -11,8 +11,9 @@ const Description:FC<DescriptionProps> = ({ title, titleColored, description }) 
     <div className="mt-32">
       <h2 className="text-6xl font-semibold text-black dark:text-white">{title}&nbsp;
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-hard via-purple-medium to-purple-soft">
-          {titleColored}
+          {titleColored}&nbsp;
         </span>
+        🚀
       </h2>
       <p className="mt-8 text-gray text-xl font-light dark:text-light-gray">
         {description}
