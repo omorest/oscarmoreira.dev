@@ -8,6 +8,7 @@ import { sortPosts, sortProjects } from '../utils'
 import ProjectCard from '../components/Cards/ProjectCard'
 import { Project } from '../types/project.types'
 import { projects } from '../content/projects'
+import HeadInfo from '../components/HeadInfo/HeadInfo'
 
 export const getStaticProps = () => {
   const posts = getPosts()
@@ -29,6 +30,7 @@ const Home: NextPage = ({ posts }: any) => {
 
   return (
     <>
+      <HeadInfo namePage='Home' metaDescription='Página de Oscar Moreira, Software Developer'/>
       <Description title={title} titleColored={titleColored} description={description}/>
       <div className='mt-20 flex flex-col gap-20 '>
         <div className=''>
