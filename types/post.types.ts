@@ -1,9 +1,3 @@
-export interface Post {
-  content: string
-  slug: string
-  data: DataPost
-}
-
 export interface DataPost {
   title: string
   date: string
@@ -11,4 +5,10 @@ export interface DataPost {
   author: string
   tags?: string[]
   image: string
+}
+
+export interface Post {
+  content: string
+  slug: string
+  data: DataPost
 }
