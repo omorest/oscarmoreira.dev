@@ -18,7 +18,7 @@ const Header: FC<HeaderProps> = ({ onChangeTheme }) => {
 
   const handleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark')
 
-  const iconChangeTheme = theme === 'dark' ? <div>🌝</div> : <div>🌚</div>
+  const iconChangeTheme = theme === 'dark' ? <div>🌚</div> : <div>🌚🌝</div>
   return (
     <div className="flex justify-between items-center mb-32">
       <Link href="/">
