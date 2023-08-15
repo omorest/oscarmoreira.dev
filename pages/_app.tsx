@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 function MyApp ({ Component, pageProps }: AppProps) {
   return (
     <div>
-      <Header onChangeTheme={() => console.log('hola')}/>
+      <Header />
       <Component {...pageProps} />
       <div className='mt-20'>
         <Footer />
