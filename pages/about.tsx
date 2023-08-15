@@ -17,7 +17,7 @@ const About = ({ data, content }: any) => {
 export default About
 
 export const getStaticProps = async ({ params }: any) => {
-  const about = await getAboutContent()
+  const about = getAboutContent()
   const mdxSource = await serialize(about.content, {
     mdxOptions: {
       rehypePlugins: [

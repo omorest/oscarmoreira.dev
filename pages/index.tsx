@@ -6,7 +6,7 @@ import { getPosts } from '../helpers/utilsPost'
 import homeContent from '../content/home.json'
 import { sortPosts, sortProjects } from '../utils'
 import ProjectCard from '../components/Cards/ProjectCard'
-import { Project } from '../types/project.types'
+import { type Project } from '../types/project.types'
 import { projects } from '../content/projects'
 
 export const getStaticProps = () => {

@@ -1,39 +1,35 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC } from 'react'
-import { Post } from '../../types/post.types'
+import { type FC } from 'react'
+import { type Post } from '../../types/post.types'
+import { Tag } from '../Tag/Tag'
 
 interface PostCardProps {
   post: Post
-  isWithCompletedInfo?: boolean
 }
 
-const PostCard: FC<PostCardProps> = ({ post, isWithCompletedInfo }) => {
-  if (isWithCompletedInfo) {
-    return (
-      <Link href={`/${post.slug}`}>
-        <div className="w-96 flex flex-col justify-between bg-white dark:bg-dark-mate rounded-lg shadow-lg hover:cursor-pointer overflow-hidden ">
-          <div className='h-[200px] w-[400px]'>
-            <Image src={post.data.image} alt={post.data.title} width="400px" height="200px" />
-          </div>
-          <div className='p-4 flex flex-col justify-between h-[40%]'>
-            <h3 className='text-xl text-black dark:text-white'>{post.data.title}</h3>
-            <span className='text-sm text-gray italic'>{post.data.date}</span>
-            <span className='text-purple-hard italic mt-4'>{post.data.tags?.map(tag => tag.toLocaleLowerCase()).join(' - ')}</span>
-          </div>
-        </div>
-      </Link>
-    )
-  }
-
+const PostCard: FC<PostCardProps> = ({ post }) => {
   return (
     <Link href={`/${post.slug}`}>
-      <div className="w-80 p-4 gap-4 flex flex-col justify-between bg-white rounded-lg border-0 shadow-lg border-gray-200 hover:cursor-pointer overflow-hidden dark:bg-dark-mate">
-        {/* <div className='h-[60%]'>
-          <img src={post.data.image} alt="" className='rounded-t-lg w-full object-cover h-[100%]'/>
-        </div> */}
-        <h3 className='text-xl text-black dark:text-white'>{post.data.title}</h3>
-        <span className='text-purple-hard italic'>{post.data.tags?.map(tag => tag).join(' - ')}</span>
+      <div
+        className="transition ease-in-out delay-100 w-80 h-80 flex flex-col bg-white dark:bg-dark-mate shadow-md hover:shadow-lg hover:cursor-pointer overflow-hidden rounded-md ">
+        <div>
+          <Image src={post.data.image} alt={post.data.title} width="400px" height="200px" objectFit={'cover'}/>
+        </div>
+        <div className="px-4 py-2 flex flex-col  h-[100%] justify-around">
+          <div>
+            <span className="text-xs text-gray italic">{post.data.date}</span>
+            <h3
+              className="transition ease-in-out delay-100 text-xl font-semibold dark:text-white">{post.data.title}</h3>
+          </div>
+          <div className="text-stone-500 text-md font-medium">
+            By
+            <Link href="/about">
+              <span className="text-blue-400 hover:text-blue-500"> {post.data.author}</span>
+            </Link>
+          </div>
+          <div className="flex gap-2">{post.data.tags?.map(tag => <Tag text={tag} key={tag}/>)}</div>
+        </div>
       </div>
     </Link>
   )

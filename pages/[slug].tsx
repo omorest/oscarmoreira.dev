@@ -19,7 +19,7 @@ const Post = ({ data, content }: any) => {
 export default Post
 
 export const getStaticPaths = async () => {
-  const posts = await getPosts()
+  const posts = getPosts()
   const paths = posts.map((post) => ({ params: { slug: post.slug } }))
   return {
     paths,
@@ -28,7 +28,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }: any) => {
-  const post = await getPost(params.slug)
+  const post = getPost(params.slug)
   const mdxSource = await serialize(post.content, {
     mdxOptions: {
       rehypePlugins: [

@@ -5,17 +5,18 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {},
-    colors: {
-      transparent: 'transparent',
-      black: '#1D1D1D',
-      'light-gray': '#c8c8c8',
-      gray: '#747474',
-      white: '#ffffff',
-      'dark-mate': '#222222',
-      'purple-hard': '#aa2de3',
-      'purple-medium': '#CE62D4',
-      'purple-soft': '#F15CBF'
+    extend: {
+      colors: {
+        transparent: 'transparent',
+        black: '#1D1D1D',
+        'light-gray': '#c8c8c8',
+        gray: '#747474',
+        white: '#ffffff',
+        'dark-mate': '#222222',
+        'purple-hard': '#aa2de3',
+        'purple-medium': '#CE62D4',
+        'purple-soft': '#F15CBF'
+      },
     },
     screens: {
       xs: '30px',

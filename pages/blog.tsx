@@ -14,7 +14,7 @@ export const getStaticProps = () => {
 
 const Blog = ({ posts }: any) => {
   const lastestPosts = sortPosts(posts, 'desc')
-  const postCards = lastestPosts.map((post, index) => <PostCard post={post} isWithCompletedInfo key={index}/>)
+  const postCards = lastestPosts.map((post, index) => <PostCard post={post} key={index}/>)
   return (
     <div>
       <Gallery title="Posts">

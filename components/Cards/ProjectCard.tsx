@@ -1,6 +1,7 @@
 import Image from 'next/image'
-import { FC } from 'react'
-import { Project } from '../../types/project.types'
+import { type FC } from 'react'
+import { type Project } from '../../types/project.types'
+import { Tag } from '../Tag/Tag'
 
 interface ProjectCardProps {
   project: Project
@@ -9,13 +10,14 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
   return (
     <a href={project.urlGithub} target="_blank" rel="noreferrer">
-      <div className="w-80 flex flex-col justify-between bg-white dark:bg-dark-mate rounded-lg border-0 shadow-lg border-gray-200 hover:cursor-pointer overflow-hidden ">
-        <div className='h-[200px] w-[400px]'>
-          <Image src={project.image} alt={project.image} width="400px" height="200px" className='rounded-t-lg object-cover' />
+      <div className="transition ease-in-out delay-100 w-80 h-72 flex flex-col bg-white dark:bg-dark-mate rounded-md shadow-md hover:shadow-lg hover:cursor-pointer overflow-hidden ">
+        <div>
+          <Image src={project.image} alt={project.image} width="400px" height="200px" objectFit={'cover'}/>
+
         </div>
-        <div className='p-4 flex flex-col justify-between'>
-          <h3 className='text-xl text-black dark:text-white'>{project.title}</h3>
-          <span className='text-purple-hard italic'>{project.tags?.map(tag => tag).join(' - ')}</span>
+        <div className='p-4 flex flex-col gap-2 h-[100%] justify-between'>
+          <h3 className='transition ease-in-out delay-100 text-xl font-semibold dark:text-white'>{project.title}</h3>
+          <div className='flex gap-2 flex-wrap'>{project.tags?.map(tag => <Tag text={tag} key={tag}/>)}</div>
         </div>
       </div>
     </a>
