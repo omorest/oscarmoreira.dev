@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div className="flex justify-between items-center mb-32">
       <Link href="/">
-        <h2 className="transition ease-in-out delay-100 font-extrabold text-3xl hover:cursor-pointer text-black dark:text-white">OM.</h2>
+        <h2 className="transition ease-in-out delay-100 font-extrabold text-3xl hover:cursor-pointer text-stone-700 dark:text-white">OM.</h2>
       </Link>
       <ul className="flex items-center gap-6 text-gray text-lg font-normal list-none">
         <li onClick={toggleTheme} className='cursor-pointer'>{iconChangeTheme}</li>

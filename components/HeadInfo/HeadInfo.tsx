@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { FC } from 'react'
+import { type FC } from 'react'
 
 interface HeadInfoProps {
   namePage: string
@@ -10,7 +10,7 @@ const HeadInfo: FC<HeadInfoProps> = ({ namePage, metaDescription }) => {
   return (
     <div>
       <Head>
-        <title>Oscar Moreira - {namePage}</title>
+        <title>Oscar Moreira | {namePage}</title>
         <meta charSet="UTF-8" />
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content="frontend, blog, projects, developer, nextjs" />
