@@ -7,10 +7,11 @@ interface HeadInfoProps {
 }
 
 const HeadInfo: FC<HeadInfoProps> = ({ namePage, metaDescription }) => {
+  const title = `Oscar Moreira | ${namePage}`
   return (
     <div>
       <Head>
-        <title>Oscar Moreira | {namePage}</title>
+        <title>{title}</title>
         <meta charSet="UTF-8" />
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content="frontend, blog, projects, developer, nextjs" />
