@@ -7,7 +7,7 @@ export const projects: Project[] = [
     urlWeb: 'https://fixadvisor.vercel.app',
     urlGithub: 'https://github.com/omorest/FixAdvisor-FrontEnd',
     tags: ['react', 'typescript', 'tailwind', 'chakraui'],
-    image: '/images/projects/pic-fixadvisor.png'
+    image: '/images/projects/pic-fixadvisor.webp'
   },
   {
     title: 'Movies',
@@ -15,7 +15,7 @@ export const projects: Project[] = [
     urlWeb: 'https://movies-app-tmdb.vercel.app/',
     urlGithub: 'https://github.com/omorest/Movies-frontend-project',
     tags: ['react', 'typescript', 'chakraui'],
-    image: '/images/projects/pic-movies.png'
+    image: '/images/projects/pic-movies.webp'
   },
   {
     title: 'Weather Web',
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     urlWeb: 'https://theweathernow.vercel.app/',
     urlGithub: 'https://github.com/omorest/WeatherWeb-Front',
     tags: ['javascript', 'webpack'],
-    image: '/images/projects/pic-weather.png'
+    image: '/images/projects/pic-weather.webp'
   },
   {
     title: 'Sat to 3SAT',
@@ -31,6 +31,6 @@ export const projects: Project[] = [
     urlWeb: 'https://3-sat.vercel.app/',
     urlGithub: 'https://github.com/omorest/3SAT',
     tags: ['javascript', 'vite'],
-    image: '/images/projects/pic-3-sat.png'
+    image: '/images/projects/pic-3-sat.webp'
   }
 ]

@@ -2,6 +2,7 @@ import Gallery from '../components/Gallery'
 import PostCard from '../components/Cards/PostCard'
 import { getPosts } from '../helpers/utilsPost'
 import { sortPosts } from '../utils'
+import HeadInfo from '../components/HeadInfo/HeadInfo'
 
 export const getStaticProps = () => {
   const posts = getPosts()
@@ -17,6 +18,7 @@ const Blog = ({ posts }: any) => {
   const postCards = lastestPosts.map((post, index) => <PostCard post={post} key={index}/>)
   return (
     <div>
+      <HeadInfo namePage='Blog' metaDescription='Blog de Oscar Moreira' />
       <Gallery title="Posts">
         {postCards}
       </Gallery>
