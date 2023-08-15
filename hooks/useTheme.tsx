@@ -9,7 +9,7 @@ export const useTheme = () => {
 
   useEffect(() => {
     const localTheme = localStorage.getItem(KEY_THEME)
-    if (localTheme ===  null) {
+    if (localTheme === null) {
       localStorage.setItem(KEY_THEME, LIGHT_THEME)
     } else {
       setTheme(localTheme)

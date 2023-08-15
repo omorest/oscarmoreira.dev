@@ -1,13 +1,8 @@
 import Link from 'next/link'
-import { FC, useEffect, useState } from 'react'
 import { useTheme } from '../hooks/useTheme'
 
-interface HeaderProps {
-  onChangeTheme: () => void
-}
-
-const Header: FC<HeaderProps> = ({ onChangeTheme }) => {
-  const {theme, toggleTheme} = useTheme()
+const Header = () => {
+  const { theme, toggleTheme } = useTheme()
 
   const iconChangeTheme = theme === 'dark' ? <div>🌚</div> : <div>🌝</div>
 
