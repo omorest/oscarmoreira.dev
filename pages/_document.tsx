@@ -4,7 +4,7 @@ export default function Document () {
   return (
     <Html>
       <Head />
-      <body className='transition ease-in-out delay-100 light dark:bg-[#1a1a1a] dark:text-white'>
+      <body className='transition ease-in-out delay-100 text-stone-600 bg-stone-100 dark:bg-stone-900 dark:text-white'>
         <Main />
         <NextScript />
       </body>
