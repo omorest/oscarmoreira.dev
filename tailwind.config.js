@@ -17,7 +17,7 @@ module.exports = {
         'purple-hard': '#aa2de3',
         'purple-medium': '#CE62D4',
         'purple-soft': '#F15CBF'
-      },
+      }
     },
     screens: {
       xs: '30px',
