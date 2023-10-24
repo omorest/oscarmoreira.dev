@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { IconBrandLinkedin, IconBrandGithub, IconBrandTwitter } from '@tabler/icons'
+import { IconBrandLinkedin, IconBrandGithub, IconBrandX } from '@tabler/icons'
 import Link from 'next/link'
 import { type Social } from '../types/socials.types'
 
@@ -12,7 +12,7 @@ const Icon: FC<IconProps> = ({ social, link }) => {
   const icon = {
     github: <IconBrandGithub className='text-stone-600'/>,
     linkedin: <IconBrandLinkedin className='text-stone-600'/>,
-    twitter: <IconBrandTwitter className='text-stone-600'/>
+    twitter: <IconBrandX className='text-stone-600'/>
   }
 
   return (
