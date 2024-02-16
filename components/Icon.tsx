@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { IconBrandLinkedin, IconBrandGithub, IconBrandX } from '@tabler/icons'
+import { IconBrandLinkedin, IconBrandGithub, IconBrandX } from '@tabler/icons-react'
 import Link from 'next/link'
 import { type Social } from '../types/socials.types'
 

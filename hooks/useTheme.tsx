@@ -5,7 +5,7 @@ const DARK_THEME = 'dark'
 const KEY_THEME = 'theme'
 export const useTheme = () => {
   const [theme, setTheme] = useState('')
-  const toggleTheme = () => setTheme(theme === DARK_THEME ? LIGHT_THEME : DARK_THEME)
+  const toggleTheme = () => { setTheme(theme === DARK_THEME ? LIGHT_THEME : DARK_THEME) }
 
   useEffect(() => {
     const localTheme = localStorage.getItem(KEY_THEME)
