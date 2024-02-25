@@ -16,7 +16,6 @@ const Header = () => {
         <li className="hover:text-stone-800 dark:hover:text-white"><Link href="/about">Sobre mí</Link></li>
         <li className="hover:text-stone-800 dark:hover:text-white"><Link href="/blog"> Blog</Link></li>
         <li className="hover:text-stone-800 dark:hover:text-white"><Link href="/projects"> Proyectos</Link></li>
-        {/* <li className="hover:text-stone-800 dark:hover:text-white"><Link href="/resume">Resume</Link></li> */}
       </ul>
     </div>
   )
