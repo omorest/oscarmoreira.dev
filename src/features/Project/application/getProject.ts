@@ -1,5 +1,5 @@
-import type {Project} from "../Domain/Project.ts";
-import type {ProjectRepository} from "../Domain/ProjectRepository.ts";
+import type {Project} from "../domain/Project.ts";
+import type {ProjectRepository} from "../domain/ProjectRepository.ts";
 
 export class GetProject {
   constructor(private postRepository: ProjectRepository) {}

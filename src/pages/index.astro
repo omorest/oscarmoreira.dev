@@ -1,9 +1,9 @@
 ---
 import CoreLayout from "../layouts/CoreLayout.astro";
 import Tag from "../components/atoms/Tag.astro";
-import {NotionProjectRepository} from "../Project/Infrastructure/NotionProjectRepository";
+import {NotionProjectRepository} from "../features/Project/Infrastructure/NotionProjectRepository";
 import {type ProjectRepository} from "../Project/Domain/ProjectRepository";
-import {GetProjects} from "../Project/Application/getProjects";
+import {GetProjects} from "../features/Project/Application/getProjects";
 
 const projectRepository: ProjectRepository = new NotionProjectRepository();
 const projects = await new GetProjects(projectRepository).run()
@@ -45,3 +45,4 @@ const projects = await new GetProjects(projectRepository).run()
   </div>
 </CoreLayout>
 
+../features/Project/application/getProjects../features/Project/infrastructure/NotionProjectRepository
