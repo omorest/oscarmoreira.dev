@@ -1,8 +1,8 @@
 import {Client} from "@notionhq/client";
-import type {Project} from "../../Project/Domain/Project.ts";
+import type {Project} from "../Domain/Project.ts";
 import type {ProjectRepository} from "../Domain/ProjectRepository.ts";
 
-export class NotionRepository implements ProjectRepository {
+export class NotionProjectRepository implements ProjectRepository {
   private notion: Client;
   constructor() {
     this.notion = new Client({ auth: import.meta.env.NOTION_TOKEN })
