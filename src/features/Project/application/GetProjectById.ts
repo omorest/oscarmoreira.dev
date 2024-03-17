@@ -1,7 +1,7 @@
-import type {Project} from "../domain/Project.ts";
-import type {ProjectRepository} from "../domain/ProjectRepository.ts";
+import type {Project} from "../domain/Project.js";
+import type {ProjectRepository} from "../domain/ProjectRepository.js";
 
-export class GetProject {
+export class GetProjectById {
   constructor(private postRepository: ProjectRepository) {}
 
   async run(projectId: string): Promise<Project | undefined> {

@@ -1,5 +1,5 @@
-import type {PostRepository} from "../Domain/PostRepository.ts";
-import type {Post} from "../Domain/Post.ts";
+import type {PostRepository} from "../domain/PostRepository.ts";
+import type {Post} from "../domain/Post.ts";
 import {Client} from "@notionhq/client";
 
 export class NotionPostRepository implements PostRepository {

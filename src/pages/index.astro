@@ -1,12 +1,12 @@
 ---
 import CoreLayout from "../layouts/CoreLayout.astro";
 import Tag from "../components/atoms/Tag.astro";
-import {NotionProjectRepository} from "../features/Project/Infrastructure/NotionProjectRepository";
-import {type ProjectRepository} from "../Project/Domain/ProjectRepository";
-import {GetProjects} from "../features/Project/Application/getProjects";
+import type { ProjectRepository } from "../features/Project/domain/ProjectRepository";
+import { NotionProjectRepository } from "../features/Project/infrastructure/NotionProjectRepository";
+import { GetAllProjects } from "../features/Project/application/GetAllProjects";
 
 const projectRepository: ProjectRepository = new NotionProjectRepository();
-const projects = await new GetProjects(projectRepository).run()
+const projects = await new GetAllProjects(projectRepository).run()
 ---
 
 <CoreLayout  title="Oscar Moreira | Home">
@@ -44,5 +44,3 @@ const projects = await new GetProjects(projectRepository).run()
     </div>
   </div>
 </CoreLayout>
-
-../features/Project/application/getProjects../features/Project/infrastructure/NotionProjectRepository
