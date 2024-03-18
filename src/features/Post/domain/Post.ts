@@ -6,5 +6,5 @@ export type Post = {
   description: string
   tags: string[]
   author: string
-  content: string
+  content?: string
 }

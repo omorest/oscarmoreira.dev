@@ -8,7 +8,7 @@ const projects = await GetAllProjects.run()
 ---
 
 <CoreLayout title="Oscar Moreira | Projects">
-  <div class="flex gap-4">
+  <div class="flex gap-4 flex-wrap">
     {
       projects.map(project => <ProjectCard project={project}/>)
     }
