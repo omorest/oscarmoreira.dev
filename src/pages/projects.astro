@@ -1,0 +1,16 @@
+---
+import CoreLayout from "../layouts/CoreLayout.astro";
+import {useCases} from '../features/Project/dependencies'
+import ProjectCard from "../features/Project/ui/components/ProjectCard.astro";
+
+const {GetAllProjects} = useCases
+const projects = await GetAllProjects.run()
+---
+
+<CoreLayout title="Oscar Moreira | Projects">
+  <div class="flex gap-4">
+    {
+      projects.map(project => <ProjectCard project={project}/>)
+    }
+  </div>
+</CoreLayout>

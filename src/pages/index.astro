@@ -1,12 +1,10 @@
 ---
 import CoreLayout from "../layouts/CoreLayout.astro";
-import Tag from "../components/atoms/Tag.astro";
-import type { ProjectRepository } from "../features/Project/domain/ProjectRepository";
-import { NotionProjectRepository } from "../features/Project/infrastructure/NotionProjectRepository";
-import { GetAllProjects } from "../features/Project/application/GetAllProjects";
-
-const projectRepository: ProjectRepository = new NotionProjectRepository();
-const projects = await new GetAllProjects(projectRepository).run()
+import ProjectCard from '../features/Project/ui/components/ProjectCard.astro'
+import {useCases} from '../features/Project/dependencies'
+const {GetAllProjects} = useCases
+const projects = await GetAllProjects.run()
+const projectsLimited = projects.slice(0, 3)
 ---
 
 <CoreLayout  title="Oscar Moreira | Home">
@@ -23,23 +21,7 @@ const projects = await new GetAllProjects(projectRepository).run()
     <h1 class="font-bold text-xl">Projects</h1>
     <div class="flex gap-4">
       {
-        projects.map(project => {
-          return (
-            <div class="w-[340px] h-[200px] flex flex-col gap-4 p-4 shadow-2xl shadow-stone-200 rounded-md border-[0.5px]">
-              <h2 class="font-semibold">{project.name}</h2>
-              <p class="text-gray-500 ">{project.description}</p>
-              <div class="flex gap-2">
-                {
-                  project.tags.map(tag => <Tag>{tag}</Tag>)
-                }
-              </div>
-              <div class="flex justify-between">
-                <a href={project.linkApp} class="text-emerald-500">Ver proyecto</a>  
-                <a href={project.linkProject} class="text-emerald-500">Ver código</a>
-              </div>
-            </div>
-          )
-        })
+        projectsLimited.map(project => <ProjectCard project={project} />)
       }
     </div>
   </div>
