@@ -5,7 +5,7 @@ import {Client} from "@notionhq/client";
 export class NotionPostRepository implements PostRepository {
   private notion: Client;
   constructor() {
-    this.notion = new Client({ auth: process.env.TOKEN })
+    this.notion = new Client({ auth: import.meta.env.NOTION_TOKEN })
   }
   async getPostById(id: string): Promise<Post | undefined> {
     return undefined;
@@ -13,7 +13,7 @@ export class NotionPostRepository implements PostRepository {
   
   async getPosts(): Promise<Post[]> {
     const postsReponse = await this.notion.databases.query({
-      database_id: process.env.databaseId as string,
+      database_id: import.meta.env.NOTION_BlOG_DATABASE_ID as string,
     });
     
     if (!postsReponse.results) {

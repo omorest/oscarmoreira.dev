@@ -1,6 +1,9 @@
 ---
 import CoreLayout from "../layouts/CoreLayout.astro";
+import {useCases} from '../features/Post/dependencies'
 
+const {GetAllPosts} = useCases
+const posts = await GetAllPosts.run()
 ---
 
 <CoreLayout title="Oscar Moreira | Projects">
