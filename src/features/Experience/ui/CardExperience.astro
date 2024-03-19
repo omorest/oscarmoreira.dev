@@ -1,0 +1,19 @@
+---
+import { Experience } from '../domain/Experience'
+import Tag from '../../../core/Tag.astro'
+
+interface Props {
+  experience: Experience
+}
+
+const {experience} = Astro.props
+---
+
+<article class="text-stone-700 w-[300px] flex flex-col gap-2 items-center">
+  <h2 class="text-2xl font-bold">{experience.company}</h2>
+  <h3 class="text-xl font-medium">{experience.position}</h3>
+  <p class="text-sm font-light">{experience.startDate} - {experience.endDate}</p>
+  <div class="flex flex-wrap gap-2 justify-center">
+    {experience.technologies.map((technology) => <Tag>{technology}</Tag>)}
+  </div>
+</article>
