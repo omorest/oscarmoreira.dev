@@ -60,9 +60,9 @@ export class NotionPostRepository implements PostRepository {
       .then((response) => response.results[0] as PageObjectResponse | undefined);
   }
 
-  async getPostContentById(pageId: string) {
+  async getPostContentById(pageId: string)  {
     return this.notion.blocks.children
       .list({ block_id: pageId })
-      .then((response) => response.results as BlockObjectResponse[]);
+      .then((response) => response);
   }
 }

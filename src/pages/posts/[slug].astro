@@ -3,32 +3,27 @@ import CoreLayout from "../../layouts/CoreLayout.astro";
 import { useCasesPost } from '../../features/Post/dependencies'
 import { NotionRenderer } from "@notion-render/client";
 import type { Block } from "@notion-render/client/dist/types";
-import { Client } from "@notionhq/client";
-import hljs from '@notion-render/hljs-plugin';
-const {GetPageBySlug} = useCasesPost
+import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import hljsPlugin from '@notion-render/hljs-plugin';
+import bookmarkPlugin from "@notion-render/bookmark-plugin";
+
+const {GetPageBySlug, GetPostContentById} = useCasesPost
 
 const { slug } = Astro.params
-let page;
+let page: PageObjectResponse | null = null;
 if (slug) {
-  page = await GetPageBySlug.run(slug)
+  page = await GetPageBySlug.run(slug) as PageObjectResponse
 }
 
 if (!page) {
   throw new Error('Post not found')
 }
-console.log(page)
-
-const client = new Client({
-  auth: import.meta.env.NOTION_TOKEN,
-});
 
 const renderer = new NotionRenderer();
-renderer.use(hljs({}));
-
-const { results } = await client.blocks.children.list({
-  block_id: page.id,
-});
-const html = renderer.render(...results as Block[]);
+renderer.use(hljsPlugin({}));
+renderer.use(bookmarkPlugin(undefined));
+const {results} = await GetPostContentById.run(page.id)
+const html = renderer.render(...results as unknown as Block[]);
 // TODO: improve hightliting codes, links, etc
 ---
 
@@ -36,6 +31,6 @@ const html = renderer.render(...results as Block[]);
   <div class="text-stone-900 text-lg leading-8 font-normal mt-20 px-10 md:px-24 text-justify">
     <!-- TODO: extract properties with mapper -->
     <h1 class="text-5xl font-bold text-center">{page.properties["title"].title[0].plain_text}</h1>
-    <div class="notion-render pb-20" set:html={html}></div>
+    <div set:html={html} class="notion-render pb-20"></div>
   </div>
 </CoreLayout>
