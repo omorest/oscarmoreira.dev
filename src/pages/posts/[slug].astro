@@ -1,0 +1,36 @@
+---
+import CoreLayout from "../../layouts/CoreLayout.astro";
+import { useCasesPost } from '../../features/Post/dependencies'
+import { NotionRenderer } from "@notion-render/client";
+import type { Block } from "@notion-render/client/dist/types";
+import { Client } from "@notionhq/client";
+import hljs from '@notion-render/hljs-plugin';
+const {GetPageBySlug} = useCasesPost
+
+const { slug } = Astro.params
+let page;
+if (slug) {
+  page = await GetPageBySlug.run(slug)
+}
+
+if (!page) {
+  throw new Error('Post not found')
+}
+
+const client = new Client({
+  auth: import.meta.env.NOTION_TOKEN,
+});
+
+const renderer = new NotionRenderer();
+renderer.use(hljs({}));
+
+const { results } = await client.blocks.children.list({
+  block_id: page.id,
+});
+const html = renderer.render(...results as Block[]);
+// TODO: improve hightliting codes, links, etc
+---
+
+<CoreLayout title="Oscar Moreira | Projects">
+  <div class="notion-render" set:html={html}></div>
+</CoreLayout>
