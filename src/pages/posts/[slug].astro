@@ -16,6 +16,7 @@ if (slug) {
 if (!page) {
   throw new Error('Post not found')
 }
+console.log(page)
 
 const client = new Client({
   auth: import.meta.env.NOTION_TOKEN,
@@ -32,5 +33,9 @@ const html = renderer.render(...results as Block[]);
 ---
 
 <CoreLayout title="Oscar Moreira | Projects">
-  <div class="notion-render" set:html={html}></div>
+  <div class="text-stone-900 text-lg leading-8 font-normal mt-20 px-10 md:px-24 text-justify">
+    <!-- TODO: extract properties with mapper -->
+    <h1 class="text-5xl font-bold text-center">{page.properties["title"].title[0].plain_text}</h1>
+    <div class="notion-render pb-20" set:html={html}></div>
+  </div>
 </CoreLayout>

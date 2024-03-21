@@ -38,7 +38,6 @@ export class NotionPostRepository implements PostRepository {
         title: properties["title"].title[0].plain_text,
         slug: properties["slug"].rich_text[0].plain_text,
         description: properties["description"].rich_text[0].plain_text,
-        // content: properties["content"].rich_text[0].plain_text,
         tags: properties["tags"].multi_select.map((tag: {name: string}) => tag.name),
         creationDate: new Date(properties["creation_date"].created_time),
         author: properties["author"].multi_select.map((author: {name: string}) => author.name),
