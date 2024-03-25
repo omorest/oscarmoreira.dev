@@ -1,10 +1,9 @@
 ---
+import ProjectCard from "../components/ProjectCard.astro";
 import CoreLayout from "../layouts/CoreLayout.astro";
-import ProjectCard from '../features/Project/ui/components/ProjectCard.astro'
-import {useCases} from '../features/Project/dependencies'
-const {GetAllProjects} = useCases
-const projects = await GetAllProjects.run()
-const projectsLimited = projects.slice(0, 3)
+import type { Project } from "../models/Project";
+import {projectsData} from '../data/projectsData'
+const lastProjects: Project[] = projectsData.slice(0, 3)
 ---
 
 <CoreLayout  title="Oscar Moreira | Home">
@@ -18,10 +17,12 @@ const projectsLimited = projects.slice(0, 3)
         Me gusta estar en constante aprendizaje, desarrollar aplicando buenas prácticas y compartir conocimiento.
     </p>
     
-    <h1 class="font-bold text-xl">Projects</h1>
+    <div class="flex items-end gap-2">
+      <h1 class="font-bold text-xl">Projects</h1><a href="/projects" class="font-normal text-stone-500">ver más</a>
+    </div>
     <div class="grid grid-cols-3">
       {
-        projectsLimited.map(project => <ProjectCard project={project} />)
+        lastProjects.map(project => <ProjectCard project={project} />)
       }
     </div>
   </div>

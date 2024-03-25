@@ -1,16 +1,13 @@
 ---
+import CardExperience from "../components/CardExperience.astro";
 import CoreLayout from "../layouts/CoreLayout.astro";
-import {useCases} from '../features/Experience/dependencies'
-import { type Experience } from "../features/Experience/domain/Experience";
-import CardExperience from "../features/Experience/ui/CardExperience.astro";
-
-const {GetAllExperiences} = useCases
-const experiences: Experience[] = await GetAllExperiences.run()
+import { type Experience, } from "../models/Experience";
+import {experienceData} from '../data/exeperienceData';
 ---
 
 <CoreLayout title="Oscar Moreira | Projects">
   <section class="flex flex-col items-center justify-center gap-10">
-    {experiences.map((experience) => <CardExperience experience={experience} />)}
+    {experienceData.map((experience) => <CardExperience experience={experience} />)}
 
   </section>
 
