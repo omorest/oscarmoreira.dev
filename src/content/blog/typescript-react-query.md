@@ -4,6 +4,9 @@ title: TS + React Query
 description: sdiasiodsan d asnd
 author: Oscar Moreira
 slug: "typescript-react-query"
+image: "https://www.kozhuhds.com/_astro/react-query.2d296c3a_dHYi8.webp"
+creationDate: "2-1-2024"
+timeToRead: 7
 ---
 
 ## Introducción

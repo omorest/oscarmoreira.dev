@@ -1,29 +1,49 @@
 ---
 import ProjectCard from "../components/ProjectCard.astro";
+import CardPost from "../components/CardPost.astro";
 import CoreLayout from "../layouts/CoreLayout.astro";
 import type { Project } from "../models/Project";
 import {projectsData} from '../data/projectsData'
+import { getCollection } from "astro:content";
 const lastProjects: Project[] = projectsData.slice(0, 3)
+const blogEntries = await getCollection('blog');
+
 ---
 
 <CoreLayout  title="Oscar Moreira | Home">
-  <div class="flex flex-col gap-6">
-    <div class="flex gap-2 font-bold text-6xl mt-20">
-      <span>Hey, soy</span>
-      <h1 class="text-emerald-500">Oscar Moreira 🌴</h1>
+  <div class="flex flex-col gap-16">
+    <div class="flex flex-col gap-6">
+      <div class="flex gap-2 font-bold text-5xl mt-20">
+        <span>Hey, soy</span>
+        <h1 class="text-emerald-500">Oscar Moreira 🌴</h1>
+      </div>
+      <p class="text-xl text-stone-800 font-normal leading-8">
+        Software Engineer, de Tenerife, Islas Canarias 🇮🇨.
+      </p>
     </div>
-    <p class="text-xl text-stone-800 font-normal leading-8">
-        Software Engineer, enfocado en el desarrollo Frontend, aunque me encanta explorar y aprender de otras áreas.
-        Me gusta estar en constante aprendizaje, desarrollar aplicando buenas prácticas y compartir conocimiento.
-    </p>
     
-    <div class="flex items-end gap-2">
-      <h1 class="font-bold text-xl">Projects</h1><a href="/projects" class="font-normal text-stone-500">ver más</a>
+    
+    <div class="flex flex-col gap-4">
+      <h2 class="font-bold text-2xl">Últimos projectos</h2>
+      <!-- <a href="/blog" class="font-normal text-stone-500">ver más</a> -->
+      <div class="w-full h-[1px] bg-black"></div>
+      <div class="flex flex-wrap gap-14">
+        {
+          blogEntries.map(post => <CardPost post={{...post.data, slug: post.slug}} />)
+        }
+      </div>
     </div>
-    <div class="grid grid-cols-3">
-      {
-        lastProjects.map(project => <ProjectCard project={project} />)
-      }
+
+
+    <div class="flex flex-col items-start gap-4">
+      <h2 class="font-bold text-xl">Últimos projectos</h2>
+      <!-- <a href="/projects" class="font-normal text-stone-500">ver más</a> -->
+      <div class="w-full h-[1px] bg-black"></div>
+      <div class="grid grid-cols-3">
+        {
+          lastProjects.map(project => <ProjectCard project={project} />)
+        }
+      </div>
     </div>
   </div>
 </CoreLayout>

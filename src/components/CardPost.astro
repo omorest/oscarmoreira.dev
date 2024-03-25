@@ -1,0 +1,26 @@
+---
+import {type Post} from '../models/Post'    
+interface Props {
+  post: Post
+}
+
+const {post} = Astro.props
+// console.log(post)
+---
+
+<a href={`/post/${post.slug}`} class="flex flex-col gap-4 min-w-64 max-w-64 min-h-80 cursor-pointer">
+  <figure class="min-w-64 max-w-64 min-h-80 overflow-hidden">
+    <img 
+      src={post.image} 
+      alt=""
+      class="w-[100%] h-[100%] rounded-lg object-cover 
+      hover:scale-125 transition-all duration-500 
+      "
+    >
+  </figure>
+  <div class="text-stone-500 font-normal flex justify-between">
+    <span>{post.creationDate}</span>
+    <span>{post.timeToRead} min read</span>
+  </div>
+  <h2 class="font-bold text-xl">{post.title}</h2>
+</fi>

@@ -7,6 +7,6 @@ export type Post = {
   description: string
   tags: string[]
   author: string
-  content?: string
-  published: boolean
+  image: string
+  timeToRead: number
 }
