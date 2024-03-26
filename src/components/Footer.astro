@@ -2,6 +2,7 @@
 import GithubIcon from "./icons/GithubIcon.astro";
 import TwitterIcon from "./icons/TwitterIcon.astro";
 import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import SocialNetworks from "./SocialNetworks.astro";
 
 
 ---
@@ -9,11 +10,7 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
 <footer class="flex flex-col justify-center items-center gap-6">
   <div class="flex flex-col justify-center items-center gap-2">
     <span class="font-bold text-lg">Sígueme</span>
-    <div class="flex gap-4">
-      <a href="https://twitter.com/oscarmoreira" target="_blank" rel="noopener noreferrer" aria-label="Follow me on Twitter" class="text-emerald-600 hover:text-stone-900"><TwitterIcon /></a>
-      <a href="https://github.com/omorest" target="_blank" rel="noopener noreferrer" aria-label="Follow me on Github" class="text-emerald-600 hover:text-stone-900"><GithubIcon /></a>
-      <a href="https://github.com/omorest" target="_blank" rel="noopener noreferrer" aria-label="Follow me on Linkedin" class="text-emerald-600 hover:text-stone-900"><LinkedinIcon /></a>
-    </div>
+    <SocialNetworks />
   </div>
   <span>@{new Date().getFullYear()} Oscar Moreira 🇮🇨</span>
 </footer>
