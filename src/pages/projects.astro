@@ -7,12 +7,12 @@ import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <CoreLayout title="Oscar Moreira | Projects">
-  <div class="flex flex-col gap-10 mt-10">
-    <h1 class="text-3xl font-bold">Projectos</h1>
-    <div class="grid grid-cols-3">
+  <section class="flex flex-col items-start gap-6 mt-20">
+    <h2 class="font-bold text-2xl">Projectos</h2>
+    <div class="flex w-full">
       {
-        projects.map(project => <ProjectCard project={project}/>)
+        projects.map(project => <ProjectCard project={project} />)
       }
-  </div>
-</div>
+    </div>
+  </section>
 </CoreLayout>

@@ -1,6 +1,8 @@
 ---
+import { type Project } from '@/models/Project'
+import LinkIcon from '@/components/icons/LinkIcon.astro'
+import GithubIcon from '@/components/icons/GithubIcon.astro'
 import Tag from './Tag.astro'
-import {type Project} from '../models/Project'
 
 interface Props {
   project: Project
@@ -8,18 +10,36 @@ interface Props {
 const {project} = Astro.props
 ---
 
-<div class="w-[340px] h-[200px] flex flex-col gap-4 p-4 shadow-2xl shadow-stone-200 rounded-md justify-between ">
-  <div class="h-[50%] flex flex-col gap-2">
-    <h2 class="font-semibold">{project.name}</h2>
-    <p class="text-gray-500 ">{project.description}</p>
+<!-- TODO: use Image astro -->
+
+<article class="w-full flex gap-6">
+  <figure class="lg:min-w-96 lg:max-w-96 rounded-md">
+    <img 
+      src={project.image}
+      alt=""
+      class="rounded-lg object-fill"
+    >
+  </figure>
+  <div class="flex flex-col gap-2">
+    <h3 class="text-xl font-bold">{project.name}</h3>
+
+    <div class="h-full flex flex-col justify-between gap-4">
+      <p class="leading-8">{project.description}</p>
+      <div class="flex flex-col gap-4">
+        <div class="flex gap-4">
+          {project.technologies.map(tag => <Tag> {tag}</Tag>)}
+        </div>
+        <div class="flex gap-4">
+          <a href={project.linkProject} target="_blank" class="bg-stone-800 text-white rounded-lg py-2 px-4 flex justify-center items-center gap-1">
+            <GithubIcon width={20} height={20}/>
+            Código
+          </a>
+          <a href={project.linkApp} target="_blank" class="bg-stone-800 text-white rounded-lg py-2 px-4 flex justify-center items-center gap-1">
+            <LinkIcon width={20} height={20}/>
+            Aplicación
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="flex gap-2">
-    {
-      project.technologies.map(technology => <Tag>{technology}</Tag>)
-    }
-  </div>
-  <div class="flex justify-between">
-    <a href={project.linkApp} target="_blank" class="text-emerald-500">Ver proyecto</a>  
-    <a href={project.linkProject} target="_blank" class="text-emerald-500">Ver código</a>
-  </div>
-</div>
+</article>

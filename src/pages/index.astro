@@ -1,5 +1,6 @@
 ---
 import ProjectCard from "../components/ProjectCard.astro";
+import Footer from '@/components/Footer.astro'
 import CardPost from "../components/CardPost.astro";
 import CoreLayout from "../layouts/CoreLayout.astro";
 import type { Project } from "../models/Project";
@@ -13,7 +14,7 @@ const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
 
 <CoreLayout  title="Oscar Moreira | Home">
   <div class="flex flex-col gap-16">
-    <div class="flex flex-col gap-6">
+    <section class="flex flex-col gap-6">
       <div class="flex gap-2 font-bold text-5xl mt-20">
         <span>Hey, soy</span>
         <h1 class="text-emerald-500">Oscar Moreira 🌴</h1>
@@ -21,10 +22,10 @@ const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
       <p class="text-xl text-stone-800 font-normal leading-8">
         Software Engineer, de Tenerife, Islas Canarias 🇮🇨.
       </p>
-    </div>
+    </section>
     
     
-    <div class="flex flex-col gap-6">
+    <section class="flex flex-col gap-6">
       <h2 class="font-bold text-2xl">Últimos posts</h2>
       <!-- <a href="/blog" class="font-normal text-stone-500">ver más</a> -->
       <div class="w-full h-[1.5px] bg-stone-300"></div>
@@ -33,18 +34,20 @@ const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
           blogEntries.map(post => <CardPost post={{...post.data, slug: post.slug}} />)
         }
       </div>
-    </div>
+    </section>
 
 
-    <div class="flex flex-col items-start gap-6">
-      <h2 class="font-bold text-xl">Últimos projectos</h2>
+    <section class="flex flex-col items-start gap-6">
+      <h2 class="font-bold text-2xl">Últimos projectos</h2>
       <!-- <a href="/projects" class="font-normal text-stone-500">ver más</a> -->
       <div class="w-full h-[1.5px] bg-stone-300"></div>
-      <div class="grid grid-cols-3">
+      <div class="flex w-full">
         {
           lastProjects.map(project => <ProjectCard project={project} />)
         }
       </div>
-    </div>
+    </section>
+
+    <Footer />
   </div>
 </CoreLayout>
