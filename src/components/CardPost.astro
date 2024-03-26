@@ -8,12 +8,12 @@ const {post} = Astro.props
 // console.log(post)
 ---
 
-<a href={`/post/${post.slug}`} class="flex flex-col gap-4 min-w-64 max-w-64 min-h-80 cursor-pointer">
-  <figure class="min-w-64 max-w-64 min-h-80 overflow-hidden">
+<a href={`/post/${post.slug}`} class="flex flex-col gap-4 min-w-64 max-w-64 min-h-80 cursor-pointer rounded-lg">
+  <figure class="min-w-60 max-w-60 min-h-72 overflow-hidden rounded-lg">
     <img 
       src={post.image} 
       alt=""
-      class="w-[100%] h-[100%] rounded-lg object-cover 
+      class="w-[100%] h-[100%] object-cover 
       hover:scale-125 transition-all duration-500 
       "
     >

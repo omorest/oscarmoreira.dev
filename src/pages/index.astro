@@ -13,7 +13,7 @@ const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
 ---
 
 <CoreLayout  title="Oscar Moreira | Home">
-  <div class="flex flex-col gap-16">
+  <div class="flex flex-col gap-28">
     <section class="flex flex-col gap-6">
       <div class="flex gap-2 font-bold text-5xl mt-20">
         <span>Hey, soy</span>
@@ -25,10 +25,10 @@ const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
     </section>
     
     
-    <section class="flex flex-col gap-6">
-      <h2 class="font-bold text-2xl">Últimos posts</h2>
+    <section class="flex flex-col gap-10">
+      <h2 class="font-semibold text-3xl">Últimos posts</h2>
       <!-- <a href="/blog" class="font-normal text-stone-500">ver más</a> -->
-      <div class="w-full h-[1.5px] bg-stone-300"></div>
+      <div class="w-full h-[1px] bg-stone-300"></div>
       <div class="flex flex-wrap gap-14">
         {
           blogEntries.map(post => <CardPost post={{...post.data, slug: post.slug}} />)
@@ -37,10 +37,9 @@ const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
     </section>
 
 
-    <section class="flex flex-col items-start gap-6">
-      <h2 class="font-bold text-2xl">Últimos projectos</h2>
-      <!-- <a href="/projects" class="font-normal text-stone-500">ver más</a> -->
-      <div class="w-full h-[1.5px] bg-stone-300"></div>
+    <section class="flex flex-col items-start gap-10">
+      <h2 class="font-semibold text-3xl">Últimos projectos</h2>
+      <div class="w-full h-[1px] bg-stone-300"></div>
       <div class="flex w-full">
         {
           lastProjects.map(project => <ProjectCard project={project} />)
