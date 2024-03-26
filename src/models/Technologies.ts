@@ -68,6 +68,7 @@ type Testing =
 | "Mockito"
 | "Pytest"
 | "Playwright"
+| "Vitest"
 
 
 
