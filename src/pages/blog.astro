@@ -9,7 +9,7 @@ const blogEntries = await getCollection('blog');
 <CoreLayout title="Oscar Moreira | Blog">
   <section class="flex flex-wrap mt-20">
     <div class="flex flex-col gap-8">
-      <h2 class="font-bold text-2xl">Últimos posts</h2>
+      <h2 class="font-semibold text-3xl">Posts</h2>
       <div class="flex flex-wrap gap-16">
         {
           blogEntries.map(post => <CardPost post={{...post.data, slug: post.slug}} />)

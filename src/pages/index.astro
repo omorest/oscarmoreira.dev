@@ -6,6 +6,9 @@ import CoreLayout from "../layouts/CoreLayout.astro";
 import type { Project } from "../models/Project";
 import {projectsData} from '../data/projectsData'
 import { getCollection } from "astro:content";
+import GithubIcon from "@/components/icons/GithubIcon.astro";
+import LinkedinIcon from "@/components/icons/LinkedinIcon.astro";
+import TwitterIcon from "@/components/icons/TwitterIcon.astro";
 const lastProjects: Project[] = projectsData.slice(0, 3)
 const blogAllEntries = await getCollection('blog');
 const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
@@ -22,6 +25,11 @@ const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
       <p class="text-xl text-stone-800 font-normal leading-8">
         Software Engineer, de Tenerife, Islas Canarias 🇮🇨.
       </p>
+      <div class="flex gap-4">
+        <a href="https://twitter.com/oscarmoreira" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-stone-900"><TwitterIcon /></a>
+        <a href="https://github.com/omorest" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-stone-900"><GithubIcon /></a>
+        <a href="https://github.com/omorest" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-stone-900"><LinkedinIcon /></a>
+      </div>
     </section>
     
     
@@ -46,7 +54,5 @@ const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
         }
       </div>
     </section>
-
-    <Footer />
   </div>
 </CoreLayout>

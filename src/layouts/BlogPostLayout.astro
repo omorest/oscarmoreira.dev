@@ -24,7 +24,10 @@ const { frontmatter } = Astro.props;
           <slot />
         </Prose>
       </article>
-      <Footer />
+      <div class="mt-20">
+        <div class="w-full h-[1px] bg-stone-300 mb-6"></div>
+        <Footer />
+      </div>
     </main>
   </body>
 </html>
