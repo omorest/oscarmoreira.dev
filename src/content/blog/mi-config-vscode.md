@@ -4,7 +4,7 @@ title: Mi Configuración de VSCode
 description: sdiasiodsan d asnd
 author: Oscar Moreira
 slug: "mi-vscode-config"
-image: "https://www.kozhuhds.com/_astro/react-query.2d296c3a_dHYi8.webp"
+image: "https://logowik.com/content/uploads/images/visual-studio-code7642.jpg"
 creationDate: "20-2-2024"
 timeToRead: 5
 ---

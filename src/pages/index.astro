@@ -6,7 +6,8 @@ import type { Project } from "../models/Project";
 import {projectsData} from '../data/projectsData'
 import { getCollection } from "astro:content";
 const lastProjects: Project[] = projectsData.slice(0, 3)
-const blogEntries = await getCollection('blog');
+const blogAllEntries = await getCollection('blog');
+const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
 
 ---
 
@@ -23,10 +24,10 @@ const blogEntries = await getCollection('blog');
     </div>
     
     
-    <div class="flex flex-col gap-4">
-      <h2 class="font-bold text-2xl">Últimos projectos</h2>
+    <div class="flex flex-col gap-6">
+      <h2 class="font-bold text-2xl">Últimos posts</h2>
       <!-- <a href="/blog" class="font-normal text-stone-500">ver más</a> -->
-      <div class="w-full h-[1px] bg-black"></div>
+      <div class="w-full h-[1.5px] bg-stone-300"></div>
       <div class="flex flex-wrap gap-14">
         {
           blogEntries.map(post => <CardPost post={{...post.data, slug: post.slug}} />)
@@ -35,10 +36,10 @@ const blogEntries = await getCollection('blog');
     </div>
 
 
-    <div class="flex flex-col items-start gap-4">
+    <div class="flex flex-col items-start gap-6">
       <h2 class="font-bold text-xl">Últimos projectos</h2>
       <!-- <a href="/projects" class="font-normal text-stone-500">ver más</a> -->
-      <div class="w-full h-[1px] bg-black"></div>
+      <div class="w-full h-[1.5px] bg-stone-300"></div>
       <div class="grid grid-cols-3">
         {
           lastProjects.map(project => <ProjectCard project={project} />)
