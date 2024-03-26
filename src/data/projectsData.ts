@@ -6,7 +6,7 @@ export const projectsData: Project[] = [
     name: "GitHub Wrapped",
     authors: ["Óscar Moreira"],
     description: "A GitHub profile summary generator. Your last followers, repositories, and more in a single page.",
-    image: "src/data/images/gh-wrapped.png",
+    image: "https://res.cloudinary.com/dz1h72c42/image/upload/v1711490214/OscarMoreira.dev/gh-wrapped_qyti1s.webp",
     linkApp: "https://gh-wrapped.vercel.app/",
     linkProject: "https://github.com/omorest/Github-Wrapped",
     publishDate: "2024",
