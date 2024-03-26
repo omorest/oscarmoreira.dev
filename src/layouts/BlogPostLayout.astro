@@ -1,8 +1,10 @@
 ---
+import Prose from '@/components/Prose.astro';
 import '../../base.css';
 import Navbar from "../components/Navbar.astro";
+import Footer from '@/components/Footer.astro';
 
-// const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 <html lang="es">
   <head>
@@ -12,13 +14,17 @@ import Navbar from "../components/Navbar.astro";
   <body class="flex justify-center text-stone-800">
     <main class="w-80 md:w-[1000px] p-10">
       <Navbar />
-      <article>
-        <!-- <h1>{frontmatter.title}</h1> -->
-        <!-- <h2>Autor del artículo: {frontmatter.author}</h2>
-        <p>{frontmatter.description}</p> -->
-        <slot /> <!--
+      <article class="flex flex-col justify-center items-center gap-10 mt-10 mb-20">
+        <div class="flex flex-col items-center gap-4">
+          <h1 class="text-4xl font-bold">{frontmatter.title}</h1>
+          <span>{frontmatter.creationDate}</span>
+          <span>{frontmatter.author}</span>
+        </div>
+        <Prose>
+          <slot />
+        </Prose>
       </article>
-    <!-- <Footer /> -->
+      <Footer />
     </main>
   </body>
 </html>
