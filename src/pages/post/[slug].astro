@@ -1,5 +1,5 @@
 ---
-export async function getStaticPaths() {
+export async function getStaticPaths(): Promise<any[]> {
   const posts = await Astro.glob('../../content/blog/**/*.md')
 
   return posts.map(post => ({
