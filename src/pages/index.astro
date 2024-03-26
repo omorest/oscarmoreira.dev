@@ -18,7 +18,7 @@ const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
 <CoreLayout  title="Oscar Moreira | Home">
   <div class="flex flex-col gap-28">
     <section class="flex flex-col gap-6">
-      <div class="flex gap-2 font-bold text-5xl mt-20">
+      <div class="flex flex-col md:flex-row gap-2 font-bold text-4xl md:text-5xl mt-20">
         <span>Hey, soy</span>
         <h1 class="text-emerald-500">Oscar Moreira 🌴</h1>
       </div>
@@ -37,7 +37,7 @@ const blogEntries = blogAllEntries.slice(0, 3) // TODO: sort by date
       <h2 class="font-semibold text-3xl">Últimos posts</h2>
       <!-- <a href="/blog" class="font-normal text-stone-500">ver más</a> -->
       <div class="w-full h-[1px] bg-stone-300"></div>
-      <div class="flex flex-wrap gap-14">
+      <div class="flex flex-wrap gap-14 justify-center md:justify-start">
         {
           blogEntries.map(post => <CardPost post={{...post.data, slug: post.slug}} />)
         }
