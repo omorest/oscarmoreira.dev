@@ -3,11 +3,25 @@ import CardExperience from "../components/CardExperience.astro";
 import CoreLayout from "../layouts/CoreLayout.astro";
 import { type Experience, } from "../models/Experience";
 import {experienceData} from '../data/exeperienceData';
+import { StudiesData } from "@/data/studiesData";
 ---
 
 <CoreLayout title="Oscar Moreira | Projects">
-  <section class="flex flex-col items-center justify-center gap-12 mt-10">
-    {experienceData.map((experience) => <CardExperience experience={experience} />)}
-  </section>
-
+  <div class="w-full flex justify-between">
+    <section class="flex flex-col items-start justify-center gap-12 mt-10">
+      <h2 class="font-semibold text-3xl">Experiencia</h2>
+      {experienceData.map((experience) => <CardExperience experience={experience} />)}
+    </section>
+    <section class="flex flex-col items-start gap-12 mt-10">
+      <h2 class="font-semibold text-3xl">Estudios</h2>
+      {StudiesData.map((study) => {
+        return (
+          <div class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold">{study.degree}</h2>
+            <p class="text-lg">{study.institution}</p>
+          </div>
+        )
+      })}
+    </section>
+  </div>
 </CoreLayout>

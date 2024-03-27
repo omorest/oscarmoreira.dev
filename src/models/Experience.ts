@@ -11,3 +11,4 @@ export interface Experience {
   languaje: Languages[];
   content?: string;
 }
+
