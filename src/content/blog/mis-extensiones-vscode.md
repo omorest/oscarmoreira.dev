@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: Mi extensiones imprescindibles de VSCode
+title: Mi extensiones de VSCode
 description: Extensiones más importantes y que uso en el día a día en VSCode.
 author: Oscar Moreira
 slug: "mis-extensiones-vscode"
